@@ -38,4 +38,7 @@
 <script></script>
 
 <style>
+.age input[type="text"] {
+    width: 30px;
+}
 </style>
