@@ -16,11 +16,11 @@
     </div>
     <div>
       <label>備考 :</label>
-      <input type="text" id="remark" name="remark" />
+      <input type="text" id="remark" name="remark" v-model="remark" />
     </div>
     <div>
-      <input type="button" class="btn btn-primary" value="追加" />
-      <input type="button" class="btn btn-primary" value="リセット" />
+      <input type="button" class="btn btn-primary" @click="addData()" value="追加" />
+      <input type="button" class="btn btn-primary" @click="resetData()" value="リセット" />
     </div>
     <hr />
   </div>
@@ -33,12 +33,23 @@ export default {
     return {
       name: "",
       age: "",
+      remark: "",
       isIdRequired: true,
       isAgeRequired: true,
       required: "必須項目です",
       nameWarning: "必須項目です",
       ageWarning: "必須項目です"
     };
+  },
+  methods: {
+    addData: function() {
+      window.alert("addData");
+    },
+    resetData: function() {
+      this.name = "";
+      this.age = "";
+      this.remark = "";
+    }
   },
   computed: {
     nameCount() {
