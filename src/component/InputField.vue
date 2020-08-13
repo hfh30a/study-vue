@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import * as Util from '../util'
+import * as Util from '../scripts/util'
 export default {
   data() {
     return {
