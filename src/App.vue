@@ -8,6 +8,7 @@
 <script>
 import InputField from "./component/InputField";
 import SearchField from "./component/SearchField";
+import DisplayData from "./component/DisplayData";
 export default {
   name: "app",
   data() {
@@ -15,7 +16,7 @@ export default {
       msg: "Welcome to Your Vue.js App",
     };
   },
-  components: { InputField, SearchField },
+  components: { InputField, SearchField, DisplayData },
 };
 </script>
 
