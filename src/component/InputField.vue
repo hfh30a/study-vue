@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import * as Util from '../util'
 export default {
   data() {
     return {
@@ -54,7 +55,7 @@ export default {
         this.isAgeRequired = true;
         this.ageWarning = this.required
       } else {
-        if(Number.isInteger(Number(this.age))){
+        if(Util.checkNumber(this.age)) {
           this.isAgeRequired = false;
         } else{
           this.isAgeRequired = true
