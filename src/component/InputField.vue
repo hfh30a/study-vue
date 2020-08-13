@@ -4,14 +4,14 @@
       <label>名前 :</label>
       <input type="text" id="name" name="name" v-model="name" />
       <span class="required" v-if="isIdRequired">{{ nameWarning }}</span>
-      <span class="ok" v-else>OK!</span>
+      <span class="ok" v-else>{{ ok }}</span>
       <span class="display-none">{{ nameCount }}</span>
     </div>
     <div>
       <label>年齢 :</label>
       <input type="text" id="age" name="age" v-model="age" />
       <span class="required" v-if="isAgeRequired">{{ ageWarning }}</span>
-      <span class="ok" v-else>OK!</span>
+      <span class="ok" v-else>{{ ok }}</span>
       <span class="display-none">{{ ageCount }}</span>
     </div>
     <div>
@@ -38,12 +38,23 @@ export default {
       isAgeRequired: true,
       required: "必須項目です",
       nameWarning: "必須項目です",
-      ageWarning: "必須項目です"
+      ageWarning: "必須項目です",
+      ok: "OK!"
     };
   },
   methods: {
     addData: function() {
-      window.alert("addData");
+      window.alert(this.nameWarning);
+      window.alert(this.ok);
+      if(this.nameWarning !== this.ok) {
+        window.alert("名前が無効です");
+        return;
+      }
+      if(this.ageWarning !== this.ok) {
+        window.alert("年齢が無効です");
+        return;
+      }
+      window.alert("ok!");
     },
     resetData: function() {
       this.name = "";
